@@ -1,13 +1,9 @@
-/* eslint-disable no-unused-vars */
 const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: [
-    // entry point of our app
-    './client/index.js',
-  ],
+  entry: './client/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/',
@@ -18,17 +14,10 @@ module.exports = {
   devServer: {
     host: 'localhost',
     port: 8080,
-    // match the output path
     contentBase: path.resolve(__dirname, 'dist'),
-    // enable HMR on the devServer
     hot: true,
-    // match the output 'publicPath'
     publicPath: '/',
-    // fallback to root for other urls
-    historyApiFallback: true,
-
     inline: true,
-
     headers: { 'Access-Control-Allow-Origin': '*' },
     /**
      * proxy is required in order to make api calls to
@@ -65,10 +54,8 @@ module.exports = {
         test: /\.(png|jpg|gif|woff|woff2|eot|ttf|svg|ico)$/,
         use: [
           {
-            // loads files as base64 encoded data url if image file is less than set limit
             loader: 'url-loader',
             options: {
-              // if file is greater than the limit (bytes), file-loader is used as fallback
               limit: 8192,
             },
           },
@@ -82,7 +69,6 @@ module.exports = {
     }),
   ],
   resolve: {
-    // Enable importing JS / JSX files without specifying their extension
     extensions: ['.js', '.jsx'],
   },
 };

@@ -1,12 +1,18 @@
 {
-  "name": "solo-project",
+  "name": "Solo-Project",
   "version": "1.0.0",
   "main": "server/server.js",
+  "homepage": "./",
   "scripts": {
     "start": "node server/server.js",
-    "dev": "concurrently \"cross-env NODE_ENV=development webpack-dev-server --open --hot --inline --progress --colors --watch --content-base ./\" \"nodemon ./server/server.js\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "concurrently \"cross-env NODE_ENV=development webpack-dev-server --open --inline --progress --colors --watch --content-base ./\" \"nodemon ./server/server.js\""
   },
+  "keywords": [
+    "Mood",
+    "Tracker",
+    "journal"
+  ],
+  "author": "Amy Yee",
   "license": "MIT",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.15",
@@ -17,7 +23,6 @@
     "node-fetch": "^2.3.0",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
-    "react-hot-loader": "^4.6.3",
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1"
   },
@@ -31,7 +36,7 @@
     "css-loader": "^1.0.1",
     "file-loader": "^4.0.0",
     "html-webpack-plugin": "^3.2.0",
-    "nodemon": "^1.18.9",
+    "nodemon": "^1.19.4",
     "style-loader": "^0.23.1",
     "url-loader": "^2.0.1",
     "webpack": "^4.20.2",

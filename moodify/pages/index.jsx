@@ -1,23 +1,10 @@
 import Head from 'next/head';
 import React, { useState } from 'react';
 
+import Calendar from './calendar/index.jsx';
+
 export default function Home() {
-  const [color, setColor] = useState('red');
-
-  let rows = [];
-  for (let i = 0; i < 4; i++) {
-    rows.push(
-      <button style={{backgroundColor: color }} />
-    )
-  }
-
-  let columns = [];
-  for (let i = 0; i < 7; i++) {
-    columns.push(rows)
-  }
-
   
-
   return (
     <div className="container">
       <Head>
@@ -35,9 +22,7 @@ export default function Home() {
         </p>
 
         <div className="grid">
-          {columns}
-
-          
+          <Calendar />
         </div>
       </main>
 

@@ -11,6 +11,5 @@ export default function buildCalendar(value) {
           .map(() => day.add(1, "day").clone())
       );
     }
-  
     return calendar;
 }

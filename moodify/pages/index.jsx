@@ -10,7 +10,7 @@ export default function Home() {
     <div className="container">
       <Head>
         <title>MOODify</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/sun.png" />
       </Head>
 
       <main>

@@ -1,42 +1,41 @@
-import React, { useState, useEffect } from 'react';
-import moment from 'moment';
+import React, { useState, useEffect } from "react";
+import dayStyles, { beforeToday } from "./styles.js";
+import buildCalendar from "./build.js";
+import Header from "./header.jsx";
 
-export default function Calendar() {
-    const [calendar, setCalendar] = useState([]);
-    const [value, setValue] = useState(moment());
-    // Clone of value so original value is not modified
-    const startDay = value.clone().startOf("month").startOf("week");
-    const endDay = value.clone().endOf("month").endOf("week");
-  
-    useEffect(() => {
-      const day = startDay.clone().subtract(1, "day");
-      const a = [];
-      while (day.isBefore(endDay, "day")) {
-        a.push(
-          Array(7)
-            .fill(0)
-            .map(() => day.add(1, "day").clone())
-        );
-      }
-      setCalendar(a);
-    }, [value]);
-  
-    return (
-      <div className="calendar">
+export default function Calendar({ value, onChange }) {
+  const [calendar, setCalendar] = useState([]);
+
+  useEffect(() => {
+    setCalendar(buildCalendar(value));
+  }, [value]);
+
+  return (
+    <div className="calendar">
+      <Header value={value} onChange={onChange} />
+
+      <div className="body">
+        <div className="day-names">
+          {["s", "m", "t", "w", "t", "f", "s"].map((d) => (
+            <div className="week">{d}</div>
+          ))}
+        </div>
         {calendar.map((week) => (
           <div>
             {week.map((day) => (
-              <div className="day" onClick={() => setValue(day)}>
-                <div
-                  className={value.isSame(day, "day") ? "selected" : ""}
-                >
+              <div
+                className="day"
+                onClick={() => !beforeToday(day) && onChange(day)}
+              >
+                <div className={dayStyles(day, value)}>
                   {day.format("D").toString()}
                 </div>
               </div>
             ))}
           </div>
         ))}
-        <style jsx>
+      </div>
+      <style jsx>
           {`
           .calendar {
             box-sizing: border-box;
@@ -127,10 +126,9 @@ export default function Calendar() {
           
           .calendar .day div.today {
             background-color: var(--grey);
-          }
+          }          
           `}
       </style>
-      </div>
-      
-    );
-  }
+    </div>
+  );
+}

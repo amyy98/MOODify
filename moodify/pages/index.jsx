@@ -1,10 +1,11 @@
 import Head from 'next/head';
 import React, { useState } from 'react';
-
 import Calendar from './calendar/index.jsx';
+import moment from 'moment';
 
 export default function Home() {
-  
+  const [value, setValue] = useState(moment());
+
   return (
     <div className="container">
       <Head>
@@ -22,7 +23,7 @@ export default function Home() {
         </p>
 
         <div className="grid">
-          <Calendar />
+          <Calendar value={value} onChange={setValue} />
         </div>
       </main>
 

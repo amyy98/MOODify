@@ -23,7 +23,7 @@ export default function Home() {
         </p>
 
         <div className="grid">
-          <Calendar value={value} onChange={setValue} />
+          <Calendar/>
         </div>
       </main>
 

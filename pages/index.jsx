@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import React, { useState } from 'react';
-import Calendar from './calendar/index.jsx';
+import Calendar from './calendar/build.jsx';
 import moment from 'moment';
 
 export default function Home() {

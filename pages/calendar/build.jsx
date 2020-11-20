@@ -12,16 +12,17 @@ export default function Calendar() {
   );
 }
 
-// globally scoped to persist variable
-// Fantastic -> great -> OK -> not so good
-let colors = ["#fffc9c", "#ffd187", "#ff9b21", "#ff6017"];
-let counter = 0;
-
-function changeColors() {
-  if (counter === 4) {
-    counter = 0;
+function changeColors(currColor) {
+  // Fantastic -> great -> OK -> not so good
+  if (currColor === "white") {
+    return "#fffc9c";
+  } else if (currColor === "#fffc9c") {
+    return "#ffd187";
+  } else if (currColor === "#ffd187") {
+    return "#ff6017";
+  } else if (currColor === "#ff6017") {
+    return "white";
   }
-  return colors[counter++];
 }
 
 function Days() {
@@ -37,7 +38,7 @@ function Days() {
     <div>
       <button
         style={{ backgroundColor: sunColor }}
-        onClick={() => setSunColor(changeColors)}
+        onClick={() => setSunColor(changeColors(sunColor))}
       >
         Sunday
       </button>

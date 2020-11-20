@@ -87,13 +87,13 @@ function Days() {
       <style jsx>
         {`
         button {
-          border-radius: 40px;
+          border-radius: 50px;
           border-width: 1px;
           cursor: pointer; 
           outline: none;
-          height: 80px;
-          width: 80px;
-          padding-top: 25px;
+          height: 90px;
+          width: 90px;
+          padding-top: 20px;
           margin: 5px;
         }
         button:hover {

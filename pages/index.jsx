@@ -1,11 +1,9 @@
-import Head from 'next/head';
-import React, { useState } from 'react';
-import Calendar from './calendar/build.jsx';
-import moment from 'moment';
+import Head from "next/head";
+import React, { useState } from "react";
+import Calendar from "./calendar/build.jsx";
+import moment from "moment";
 
 export default function Home() {
-
-
   return (
     <div className="container">
       <Head>
@@ -14,16 +12,12 @@ export default function Home() {
       </Head>
 
       <main>
-        <h1 className="title">
-          Welcome!
-        </h1>
+        <h1 className="title">Welcome!</h1>
 
-        <p className="description">
-          Track your mood.
-        </p>
+        <p className="description">Track your mood.</p>
 
         <div className="grid">
-          <Calendar/>
+          <Calendar />
         </div>
       </main>
 
@@ -33,12 +27,15 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          My Github {' '}
+          My Github{" "}
         </a>
       </footer>
 
       <style jsx>{`
         .container {
+          background-color: #ffcfdf;
+          background-image: linear-gradient(315deg, #ffcfdf 0%, #b0f3f1 74%);
+
           min-height: 100vh;
           padding: 0 0.5rem;
           display: flex;
@@ -153,5 +150,5 @@ export default function Home() {
         }
       `}</style>
     </div>
-  )
+  );
 }

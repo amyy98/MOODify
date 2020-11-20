@@ -38,7 +38,7 @@ function Days() {
     <div>
       <button
         style={{ backgroundColor: sunColor }}
-        onClick={() => setSunColor(changeColors(sunColor))}
+        onClick={() => setSunColor(changeColors)}
       >
         Sunday
       </button>
@@ -87,6 +87,16 @@ function Days() {
       <style jsx>
         {`
         button {
+          border-radius: 40px;
+          border-width: 1px;
+          cursor: pointer; 
+          outline: none;
+          height: 80px;
+          width: 80px;
+          padding-top: 25px;
+          margin: 5px;
+        }
+        button:hover {
 
         }
         `}

@@ -12,6 +12,17 @@ export default function Calendar() {
   );
 }
 
+// globally scoped to save variable
+let colors = ["green", "black", "pink", "yellow"];
+let counter = 0;
+
+function changeColors() {
+  if (counter === 4) {
+    counter = 0;
+  }
+  return colors[counter++];
+}
+
 function Days() {
   const [sunColor, setSunColor] = useState("red");
   const [monColor, setMonColor] = useState("red");
@@ -25,53 +36,59 @@ function Days() {
     <div>
       <button
         style={{ backgroundColor: sunColor }}
-        onClick={() => setSunColor("blue")}
+        onClick={() => setSunColor(changeColors)}
       >
         Sunday
       </button>
 
       <button
         style={{ backgroundColor: monColor }}
-        onClick={() => setMonColor("blue")}
+        onClick={() => setMonColor(changeColors)}
       >
         Monday
       </button>
 
       <button
         style={{ backgroundColor: tuesColor }}
-        onClick={() => setTuesColor("blue")}
+        onClick={() => setTuesColor(changeColors)}
       >
         Tuesday
       </button>
 
       <button
         style={{ backgroundColor: wedsColor }}
-        onClick={() => setWedsColor("blue")}
+        onClick={() => setWedsColor(changeColors)}
       >
         Wednesday
       </button>
 
       <button
         style={{ backgroundColor: thursColor }}
-        onClick={() => setThursColor("blue")}
+        onClick={() => setThursColor(changeColors)}
       >
         Thursday
       </button>
 
       <button
         style={{ backgroundColor: friColor }}
-        onClick={() => setFriColor("blue")}
+        onClick={() => setFriColor(changeColors)}
       >
         Friday
       </button>
 
       <button
         style={{ backgroundColor: satColor }}
-        onClick={() => setSatColor("blue")}
+        onClick={() => setSatColor(changeColors)}
       >
         Saturday
       </button>
+      <style jsx>
+        {`
+        button {
 
+        }
+        `}
+      </style>
     </div>
   );
 }

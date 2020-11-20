@@ -12,8 +12,9 @@ export default function Calendar() {
   );
 }
 
-// globally scoped to save variable
-let colors = ["green", "black", "pink", "yellow"];
+// globally scoped to persist variable
+// Fantastic -> great -> OK -> not so good
+let colors = ["#fffc9c", "#ffd187", "#ff9b21", "#ff6017"];
 let counter = 0;
 
 function changeColors() {
@@ -24,13 +25,13 @@ function changeColors() {
 }
 
 function Days() {
-  const [sunColor, setSunColor] = useState("red");
-  const [monColor, setMonColor] = useState("red");
-  const [tuesColor, setTuesColor] = useState("red");
-  const [wedsColor, setWedsColor] = useState("red");
-  const [thursColor, setThursColor] = useState("red");
-  const [friColor, setFriColor] = useState("red");
-  const [satColor, setSatColor] = useState("red");
+  const [sunColor, setSunColor] = useState("white");
+  const [monColor, setMonColor] = useState("white");
+  const [tuesColor, setTuesColor] = useState("white");
+  const [wedsColor, setWedsColor] = useState("white");
+  const [thursColor, setThursColor] = useState("white");
+  const [friColor, setFriColor] = useState("white");
+  const [satColor, setSatColor] = useState("white");
 
   return (
     <div>

@@ -1,9 +1,22 @@
 import Head from "next/head";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Calendar from "./calendar/build.jsx";
-import moment from "moment";
 
 export default function Home() {
+  const [quotes, setQuotes] = useState([]);
+  const randomNum = Math.floor((Math.random() * 1643) + 1);
+  useEffect(() => {
+  
+
+  fetch("https://type.fit/api/quotes")
+  .then((res) => res.json())
+  .then((data) => {
+    setQuotes(data)
+  });
+  })
+
+
+
   return (
     <div className="container">
       <Head>
@@ -15,6 +28,15 @@ export default function Home() {
         <h1 className="title">Welcome!</h1>
 
         <p className="description">Track your mood.</p>
+        <p className="quote">
+          {quotes.map(() => {
+            return (
+              <div>
+                
+              </div>
+            )
+          })}
+        </p>
 
         <div className="grid">
           <Calendar />
@@ -33,8 +55,8 @@ export default function Home() {
 
       <style jsx>{`
         .container {
-          background-color: #ffcfdf;
-          background-image: linear-gradient(315deg, #ffcfdf 0%, #b0f3f1 74%);
+          background-color: #ffffff;
+background-image: linear-gradient(315deg, #ffffff 0%, #d7e1ec 74%);
 
           min-height: 100vh;
           padding: 0 0.5rem;
@@ -100,6 +122,12 @@ export default function Home() {
         }
 
         .description {
+          line-height: 1.5;
+          font-size: 1.5rem;
+        }
+
+        .quote {
+          text-align: center;
           line-height: 1.5;
           font-size: 1.5rem;
         }

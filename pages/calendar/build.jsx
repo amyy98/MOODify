@@ -40,55 +40,56 @@ function Days() {
         style={{ backgroundColor: sunColor }}
         onClick={() => setSunColor(changeColors)}
       >
-        Sunday
+        Track Mood
       </button>
 
       <button
         style={{ backgroundColor: monColor }}
         onClick={() => setMonColor(changeColors)}
       >
-        Monday
+        Track Mood
       </button>
 
       <button
         style={{ backgroundColor: tuesColor }}
         onClick={() => setTuesColor(changeColors)}
       >
-        Tuesday
+        Track Mood
       </button>
 
       <button
         style={{ backgroundColor: wedsColor }}
         onClick={() => setWedsColor(changeColors)}
       >
-        Wednesday
+        Track Mood
       </button>
 
       <button
         style={{ backgroundColor: thursColor }}
         onClick={() => setThursColor(changeColors)}
       >
-        Thursday
+        Track Mood
       </button>
 
       <button
         style={{ backgroundColor: friColor }}
         onClick={() => setFriColor(changeColors)}
       >
-        Friday
+        Track Mood
       </button>
 
       <button
         style={{ backgroundColor: satColor }}
         onClick={() => setSatColor(changeColors)}
       >
-        Saturday
+        Track Mood
       </button>
       <style jsx>
         {`
         button {
           border-radius: 50px;
           border-width: 1px;
+          border-color: white;
           cursor: pointer; 
           outline: none;
           height: 90px;

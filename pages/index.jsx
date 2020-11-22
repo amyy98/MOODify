@@ -6,17 +6,21 @@ export default function Home() {
   return (
     <div className="container">
       <Head>
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300&display=swap"
+          rel="stylesheet"
+        />
         <title>mood.</title>
         <link rel="icon" href="/sun.png" />
       </Head>
 
       <main>
-        <h1 className="title">Welcome!</h1>
+        <h1 className="title">mood.</h1>
 
-        <p className="description">Track your mood.</p>
+        <p className="description"> How are you today?</p>
 
         <div className="grid">
-          <button className="next" onClick={() => nextPage()}> >> </button>
           <Calendar />
         </div>
       </main>
@@ -85,6 +89,39 @@ export default function Home() {
           color: #0070f3;
           text-decoration: none;
         }
+        h1 {
+          animation-name: example;
+          animation-duration: 10s;
+          animation-iteration-count: 100;
+          animation-direction: reverse;
+        }
+        @keyframes example {
+          0% {
+            color: #bb8523;
+            left: 0px;
+            top: 0px;
+          }
+          25% {
+            color: yellow;
+            left: 200px;
+            top: 0px;
+          }
+          50% {
+            color: lightblue;
+            left: 200px;
+            top: 200px;
+          }
+          75% {
+            color: #ffd187;
+            left: 0px;
+            top: 200px;
+          }
+          100% {
+            color: #bb8523;
+            left: 0px;
+            top: 0px;
+          }
+        }
 
         .title a:hover,
         .title a:focus,
@@ -95,7 +132,8 @@ export default function Home() {
         .title {
           margin: 0;
           line-height: 1.15;
-          font-size: 4rem;
+          font-size: 5rem;
+          font-family: "Poppins", sans-serif;
         }
 
         .title,
@@ -112,15 +150,6 @@ export default function Home() {
           text-align: center;
           line-height: 1.5;
           font-size: 1.5rem;
-        }
-
-        code {
-          background: #fafafa;
-          border-radius: 5px;
-          padding: 0.75rem;
-          font-size: 1.1rem;
-          font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
-            DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
         }
 
         .grid {
@@ -161,12 +190,4 @@ export default function Home() {
       `}</style>
     </div>
   );
-}
-
-function nextPage () {
-  return (
-    <div>
-      <Calendar />
-    </div>
-  )
 }

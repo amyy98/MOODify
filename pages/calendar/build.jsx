@@ -14,25 +14,27 @@ export default function Calendar() {
 
 function changeColors(currColor) {
   // Fantastic -> great -> OK -> not so good
-  if (currColor === "white") {
+  if (currColor === "whitesmoke") {
     return "#fffc9c";
   } else if (currColor === "#fffc9c") {
     return "#ffd187";
   } else if (currColor === "#ffd187") {
     return "#ff6017";
   } else if (currColor === "#ff6017") {
-    return "white";
+    return "lightblue";
+  } else if (currColor === "lightblue") {
+    return "whitesmoke";
   }
 }
 
 function Days() {
-  const [sunColor, setSunColor] = useState("white");
-  const [monColor, setMonColor] = useState("white");
-  const [tuesColor, setTuesColor] = useState("white");
-  const [wedsColor, setWedsColor] = useState("white");
-  const [thursColor, setThursColor] = useState("white");
-  const [friColor, setFriColor] = useState("white");
-  const [satColor, setSatColor] = useState("white");
+  const [sunColor, setSunColor] = useState("whitesmoke");
+  const [monColor, setMonColor] = useState("whitesmoke");
+  const [tuesColor, setTuesColor] = useState("whitesmoke");
+  const [wedsColor, setWedsColor] = useState("whitesmoke");
+  const [thursColor, setThursColor] = useState("whitesmoke");
+  const [friColor, setFriColor] = useState("whitesmoke");
+  const [satColor, setSatColor] = useState("whitesmoke");
 
   return (
     <div>
@@ -94,9 +96,12 @@ function Days() {
           outline: none;
           height: 90px;
           width: 90px;
-          padding-top: 20px;
+          padding-top: 40px;
           margin: 5px;
           opacity: 0.9;
+          font-family: 'Poppins', sans-serif;
+          color: 	#282828;
+          font-size:8px;
         }
         button:focus {
           opacity: 1;

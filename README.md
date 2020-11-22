@@ -54,7 +54,7 @@
 ## About The Project
 
 <!-- [![Product Name Screen Shot][product-screenshot]](https://example.com) -->
-MOOD. was created to make tracking daily moods more easier . The project is currently in Beta.
+mood. was created to make tracking daily moods more convenient, and provides insight to how we can best take care of ourselves. The project is currently in Beta.
 
 ### Built With
 
@@ -92,14 +92,10 @@ npm run dev
 
 <!-- USAGE EXAMPLES -->
 ## Usage
-View five popular trails in Los Angeles and a heatmap displaying their current traffic.     <br />
+<br />
 <p align="center">
-<img src="./assets/screenshot1.png" alt="Trail Traffic map view screenshot" width="300"> <br />
+<img src="public/splash.gif" alt="mood splash"> <br />
      </p>
-To keep track of favorites, sign up with your Google account (accessed via the bottom right nav tab). Trail Traffic will keep all of your personal information confidential.
-<p align="center">
-<img src="./assets/faves.png" alt="Trail Traffic map view screenshot" width="300"> <br />
-</p>
 
 <!-- _For more examples, please refer to the [Documentation](https://example.com)_ -->
 

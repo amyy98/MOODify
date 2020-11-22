@@ -3,24 +3,10 @@ import React, { useEffect, useState } from "react";
 import Calendar from "./calendar/build.jsx";
 
 export default function Home() {
-  const [quotes, setQuotes] = useState([]);
-  const randomNum = Math.floor((Math.random() * 1643) + 1);
-  useEffect(() => {
-  
-
-  fetch("https://type.fit/api/quotes")
-  .then((res) => res.json())
-  .then((data) => {
-    setQuotes(data)
-  });
-  })
-
-
-
   return (
     <div className="container">
       <Head>
-        <title>MOODify</title>
+        <title>mood.</title>
         <link rel="icon" href="/sun.png" />
       </Head>
 
@@ -28,17 +14,9 @@ export default function Home() {
         <h1 className="title">Welcome!</h1>
 
         <p className="description">Track your mood.</p>
-        <p className="quote">
-          {quotes.map(() => {
-            return (
-              <div>
-                
-              </div>
-            )
-          })}
-        </p>
 
         <div className="grid">
+          <button className="next" onClick={() => nextPage()}> >> </button>
           <Calendar />
         </div>
       </main>
@@ -55,8 +33,12 @@ export default function Home() {
 
       <style jsx>{`
         .container {
-          background-color: #ffffff;
-background-image: linear-gradient(315deg, #ffffff 0%, #d7e1ec 74%);
+          background: rgb(255, 222, 159);
+          background: linear-gradient(
+            40deg,
+            rgba(255, 222, 159, 1) 0%,
+            rgba(179, 219, 225, 1) 100%
+          );
 
           min-height: 100vh;
           padding: 0 0.5rem;
@@ -179,4 +161,12 @@ background-image: linear-gradient(315deg, #ffffff 0%, #d7e1ec 74%);
       `}</style>
     </div>
   );
+}
+
+function nextPage () {
+  return (
+    <div>
+      <Calendar />
+    </div>
+  )
 }

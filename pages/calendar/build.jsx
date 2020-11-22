@@ -40,55 +40,55 @@ function Days() {
         style={{ backgroundColor: sunColor }}
         onClick={() => setSunColor(changeColors)}
       >
-        Track Mood
+        <div className ="text">Track Mood</div>
       </button>
 
       <button
         style={{ backgroundColor: monColor }}
         onClick={() => setMonColor(changeColors)}
       >
-        Track Mood
+        <div className ="text">Track Mood</div>
       </button>
 
       <button
         style={{ backgroundColor: tuesColor }}
         onClick={() => setTuesColor(changeColors)}
       >
-        Track Mood
+        <div className ="text">Track Mood</div>
       </button>
 
       <button
         style={{ backgroundColor: wedsColor }}
         onClick={() => setWedsColor(changeColors)}
       >
-        Track Mood
+        <div className ="text">Track Mood</div>
       </button>
 
       <button
         style={{ backgroundColor: thursColor }}
         onClick={() => setThursColor(changeColors)}
       >
-        Track Mood
+        <div className ="text">Track Mood</div>
       </button>
 
       <button
         style={{ backgroundColor: friColor }}
         onClick={() => setFriColor(changeColors)}
       >
-        Track Mood
+        <div className ="text">Track Mood</div>
       </button>
 
       <button
         style={{ backgroundColor: satColor }}
         onClick={() => setSatColor(changeColors)}
       >
-        Track Mood
+        <div className ="text">Track Mood</div>
       </button>
       <style jsx>
         {`
         button {
           border-radius: 50px;
-          border-width: 1px;
+          border-width: 0;
           border-color: white;
           cursor: pointer; 
           outline: none;
@@ -96,9 +96,13 @@ function Days() {
           width: 90px;
           padding-top: 20px;
           margin: 5px;
+          opacity: 0.9;
+        }
+        button:focus {
+          opacity: 1;
         }
         button:hover {
-
+          opacity: 1;
         }
         `}
       </style>
